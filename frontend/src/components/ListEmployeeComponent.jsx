@@ -39,26 +39,6 @@ class ListEmployeeComponent extends Component {
             <div className="col-4 border"></div>
           </div>
         ))}
-        {/* <table className="table table-bordered">
-            <thread>
-              <tr>
-                <th scope="col">First name</th>
-                <th scope="col">Last name </th>
-                <th scope="col">Email Id</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thread>
-            <tbody>
-              {this.state.employees.map((employee) => (
-                <tr key={employee.id}>
-                  <th scope="row">{employee.id}</th>
-                  <td>{employee.firstName}</td>
-                  <td>{employee.lastName}</td>
-                  <td>{employee.emailId}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table> */}
       </div>
     );
   }
