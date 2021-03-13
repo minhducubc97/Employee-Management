@@ -10,6 +10,7 @@ class ListEmployeeComponent extends Component {
     this.addEmployee = this.addEmployee.bind(this);
     this.updateEmployee = this.updateEmployee.bind(this);
     this.deleteEmployee = this.deleteEmployee.bind(this);
+    this.viewEmployee = this.viewEmployee.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +20,7 @@ class ListEmployeeComponent extends Component {
   }
 
   addEmployee() {
-    this.props.history.push("/create-employee");
+    this.props.history.push(`/create-employee`);
   }
 
   updateEmployee(id) {
@@ -36,25 +37,29 @@ class ListEmployeeComponent extends Component {
     });
   }
 
+  viewEmployee(id) {
+    this.props.history.push(`/view-employee/${id}`);
+  }
+
   render() {
     return (
       <div>
         <h2 className="text-center">Employees List</h2>
+        <br />
         <div className="row">
           <button className="btn btn-primary" onClick={this.addEmployee}>
             Add new Employee
           </button>
         </div>
+        <br />
         <div className="row border bg-info text-light">
-          <div className="col-1 justify-content-center border">Id</div>
           <div className="col-2 justify-content-center border">First name</div>
           <div className="col-2 justify-content-center border">Last name</div>
           <div className="col-5 justify-content-center border">Email</div>
-          <div className="col-2 justify-content-center border">Action</div>
+          <div className="col-3 justify-content-center border">Action</div>
         </div>
         {this.state.employees.map((employee) => (
           <div className="row border" key={employee.id}>
-            <div className="col-1 border">{employee.id}</div>
             <div className="col-2 border overflow-auto">
               {employee.firstName}
             </div>
@@ -62,10 +67,10 @@ class ListEmployeeComponent extends Component {
               {employee.lastName}
             </div>
             <div className="col-5 border overflow-auto">{employee.emailId}</div>
-            <div className="col-2 border">
+            <div className="col-3 border">
               <button
                 onClick={() => this.updateEmployee(employee.id)}
-                className="btn btn-info"
+                className="btn btn-primary"
               >
                 Update
               </button>
@@ -74,6 +79,12 @@ class ListEmployeeComponent extends Component {
                 className="btn btn-danger ml-2"
               >
                 Delete
+              </button>
+              <button
+                onClick={() => this.viewEmployee(employee.id)}
+                className="btn btn-info ml-2"
+              >
+                View
               </button>
             </div>
           </div>
