@@ -8,6 +8,7 @@ class ListEmployeeComponent extends Component {
       employees: [],
     };
     this.addEmployee = this.addEmployee.bind(this);
+    this.updateEmployee = this.updateEmployee.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +19,10 @@ class ListEmployeeComponent extends Component {
 
   addEmployee() {
     this.props.history.push("/create-employee");
+  }
+
+  updateEmployee(id) {
+    this.props.history.push(`/update-employee/${id}`);
   }
 
   render() {
@@ -46,7 +51,14 @@ class ListEmployeeComponent extends Component {
               {employee.lastName}
             </div>
             <div className="col-5 border overflow-auto">{employee.emailId}</div>
-            <div className="col-4 border"></div>
+            <div className="col-2 border">
+              <button
+                onClick={() => this.updateEmployee(employee.id)}
+                className="btn btn-info"
+              >
+                Update
+              </button>
+            </div>
           </div>
         ))}
       </div>

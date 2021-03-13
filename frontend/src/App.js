@@ -4,6 +4,7 @@ import HeaderComponent from "./components/HeaderComponent";
 import ListEmployeeComponent from "./components/ListEmployeeComponent";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CreateEmployeeComponent from "./components/CreateEmployeeComponent";
+import UpdateEmployeeComponent from "./components/UpdateEmployeeComponent";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
             <Route
               path="/create-employee"
               component={CreateEmployeeComponent}
+            ></Route>
+            <Route
+              path="/update-employee/:id"
+              component={UpdateEmployeeComponent}
             ></Route>
           </Switch>
         </div>
