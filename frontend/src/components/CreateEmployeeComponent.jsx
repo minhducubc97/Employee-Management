@@ -92,9 +92,8 @@ class CreateEmployeeComponent extends Component {
                     Create
                   </button>
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-danger ml-2"
                     onClick={this.cancelHandler}
-                    style={{ marginLeft: "10px" }}
                   >
                     Cancel
                   </button>
