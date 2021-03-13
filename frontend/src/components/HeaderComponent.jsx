@@ -12,7 +12,7 @@ class HeaderComponent extends Component {
         <header>
           <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <div>
-              <a href="https://google.ca" className="navbar-brand">
+              <a href="/" className="navbar-brand">
                 Employee Management Application
               </a>
             </div>
