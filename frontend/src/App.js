@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CreateEmployeeComponent from "./components/CreateEmployeeComponent";
 import UpdateEmployeeComponent from "./components/UpdateEmployeeComponent";
 import ViewEmployeeComponent from "./components/ViewEmployeeComponent";
+import LoginComponent from "./components/LoginComponent";
+import RegisterComponent from "./components/RegisterComponent";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
               path="/view-employee/:id"
               component={ViewEmployeeComponent}
             ></Route>
+            <Route path="/login" component={LoginComponent}></Route>
+            <Route path="/register" component={RegisterComponent}></Route>
           </Switch>
         </div>
         <FooterComponent />
